@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>-Cody | A lightweight code editor for the dekstop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet"> 
+  <script src="https://unpkg.com/codeflask/build/codeflask.min.js"></script>
+<style>
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  --color-blue: #537BFF;
+  --color-gray: #5A5A5A;
+  --color-gray-light: #F2F2F2;
+  --color-gray-light-2: #eaeaea;
+
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: #5A5A5A;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-blue);
+  color: var(--color-blue);
+}
+
+hr {
+  border: none;
+  height: 4px;
+  background: var(--color-blue);
+  margin: 3rem;
+  width: 100%;
+  opacity: 0.2;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.call-to-action-wrapper {
+  margin-top: 7rem;
+  text-align: center;
+}
+
+.call-to-action-wrapper h1 {
+  font-size: 2rem;
+  color: var(--color-blue);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.call-to-action-wrapper h2 {
+  font-size: 1.6rem;
+  color: var(--color-gray);
+  font-weight: lighter;
+}
+
+.call-to-action-wrapper .actions {
+  display: flex;
+  justify-content: space-between;
+  width: 390px;
+  margin: 3.3rem auto 5.2rem;
+}
+
+.call-to-action-wrapper h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+.call-to-action-wrapper h4 {
+  font-size: 1.6rem;
+  font-weight: lighter;
+  color: var(--color-gray);
+  opacity: 0.25;
+  margin: 0;
+}
+
+.call-to-action-wrapper .btn {
+  width: 175px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+.call-to-action-wrapper .btn.line {
+  border: 1px solid var(--color-blue);
+}
+
+.call-to-action-wrapper .btn.readonly {
+  border: 1px solid var(--color-gray-light);
+  background: var(--color-gray-light);
+}
+
+.code-window {
+  width: 662px;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.16);
+  margin: 3.3rem auto;
+  overflow: hidden;
+  border-radius: 0.8rem;
+}
+
+.code-editor {
+  position: relative;
+  width: 100%;
+  height: 336px;
+}
+
+.code-header {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid var(--color-gray-light);
+  font-size: 1.1rem;
+  color: var(--color-blue);
+}
+
+.codeflask {
+  border: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-light {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  color: var(--color-blue);
+}
+
+.panel {
+  background: var(--color-gray-light);
+  padding: 5rem 0;
+  border-top: 2px solid var(--color-gray-light-2);
+  border-bottom: 2px solid var(--color-gray-light-2);
+}
+
+.row {
+  display: flex;
+  margin: 3rem 0;
+}
+
+.row .col {
+  flex: 1;
+  padding: 0 2rem;
+}
+
+.font-semi-bold {
+  font-weight: bold;
+}
+
+.font-semi-bold + p {
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+}
+
+footer p {
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  hr {
+    margin: 2rem 0;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+
+  .code-window {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  footer .col {
+    margin-bottom: 3rem;
+  }
+
+  .call-to-action-wrapper h2 {
+    padding: 0 2rem;
+  }
+
+  .call-to-action-wrapper .actions {
+    padding: 0 2rem;
+    width: auto;
+    flex-direction: column;
+  }
+
+  .call-to-action-wrapper .actions .btn {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+	
+</style>
+</head>
+<body>
+
+  <div class="call-to-action-wrapper">
+<h1>Cody | The next-generation Lisp editor</h1>
+    <div class="code-window">
+      <header class="code-header">
+        index.calv
+      </header>
+      <div class="code-editor"></div>
+      </div>
+    </div>
+    
+     
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="font-light">About the Cody editor</h1>
+            <p>Cody is a lightweight code editor built for the <a href="http://github.com/timo-cmd/calvin">Calvin-Lisp</a> dialect. However, it does support various languages to. Cody runs under Codeflask and electron.</p>
+            <a href="https://github.com/timo-cmd/cody" class="button">Learn more...</a>
+          </div>
+          <div class="col">
+            <h1 class="font-light">Credit & Thanks</h1>
+            <p>Made by Timo Sarkar and friends (<a href="https://github.com/timo-cmd">@timo-cmd</a>)</p>
+            
+            <p>Cody uses <a href="https://kazzkiq.github.io/CodeFlask/">Codeflask</a> for code skeleton<br>
+              Cody is partnered with GitHub and is hosted on it.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+   	
+      
+      <script>
+        const flask = new CodeFlask('.code-editor', { language: 'js' });
+flask.updateCode(`(import 'swarm.calv' from cindex)
+
+(defmacro fiber.swarm (~@body)
+  '~js.swarm) 
+
+(defn fiber (swarm stat)
+  (fiber.swarm(awake))
+  (fiber.swarm(abort))
+  (fiber.swarm(kill))
+(print swarm.status)
+
+/* 
+   Status: Swarm: Awake
+   Status: Swarm: Aborted
+   Status: Swarm: Killed
+*/`);
+</script>
+
+<script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-66459426-1');ga('send','pageview');
+  </script>
+</body>
+</html>
+      
